@@ -118,12 +118,15 @@ This task is used to create or update a resource group in Azure using the [Azure
 
    ![](images/azure-resources.png)
 
-   And you should be able to see repository with name **website** in your Container registry.
+   And you will see a repository with the name **website** in your Container registry under **Repositories**.
   
    ![](images/acr-repository.png)
 
 
-## Configure Build(CD) pipeline for Website
+## Configure Release(CD) pipeline
+
+By using a combination of manual deployment approvals, gates, and manual intervention within a release pipeline in Azure Pipelines, you can quickly and easily configure a release pipeline with all the control and auditing capabilities you require for your DevOps CI/CD processes. **Release Gates** allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. You can use gates to ensure that the release meets a wide range or criteria, without requiring user intervention.
+In addition, you can install an extension that integrates with **ServiceNow** to help you control and manage your deployments though service management methodologies such as ITIL. 
 
 1. Navigate to **Pipeline » Releases**. Select **Website-CD** and click **Edit** pipeline.
    
@@ -137,7 +140,7 @@ This task is used to create or update a resource group in Azure using the [Azure
 
     ![](images/release-tasks.png)
 
-1. Select **Variables**. You need to enter your ACR and App service (which are provisioned in build pipeline) details here. We will make use of these variable values in our pipeline tasks.
+1. Select **Variables**. You need to enter your ACR and App service (which were provisioned during the build) details here. We will make use of these variable values in our pipeline tasks.
    
     ![](images/variables-release.png)
 
@@ -152,25 +155,24 @@ This task is used to create or update a resource group in Azure using the [Azure
 
    Enter the above values for the appropriate variables.
 
-1. Select  **Azure CLI** task. Here we are using Azure CLI script to set the container settings for the Azure app service we created. Select the **Azure service connection** from the drop down. 
+1. Come back to **Tasks** and select **Azure CLI to configure Container settings to App service** task. Here we are using Azure CLI script to set the container settings for the Azure app service we created. Select the **Azure service connection** from the drop down. 
  
     ![](images/azurecli-task.png)
 
-1. Select **App Service** task. Make sure you have selected **Azure service connection** and **App service name**.
+1. Select **Deploy Container to App Service** task. Make sure you have selected **Azure subscription** and choose **App service name** value from the drop down.
      
      ![](images/appservice-task.png)
 
-1. Select **[Azure App Service manage](https://github.com/Microsoft/azure-pipelines-tasks/blob/master/Tasks/AzureAppServiceManageV0/README.md)** task. Select the required parameters as shown below. We are using this task here to restart the app service.
+1. Select **Restart Azure App Service: tailwindtraders** task. Select the required parameters as shown below. We are using this task here to restart the app service.
  
    ![](images/restart-appservice.png)
 
-1. **Save** the changes and queue the release.
+1. **Save** the changes and click **+ Release -> Create a release**.
 
     ![](images/release-progress.gif)
 
-1. Once the release is success navigate to your Azure portal. Select the app service that we created and browse to view the application deployed.
+1. Once the release succeeds, navigate to your Azure portal. Select the app service that was created previously and browse to view the deployed application.
 
    ![](images/browse-appservice.png)
 
    ![](images/website-view.png)
-
