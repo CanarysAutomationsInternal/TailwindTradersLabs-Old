@@ -38,11 +38,11 @@ There are 2 features for the developers and operations team to consider as key t
 
     ![](images/aks.gif)
 
-1. Click on the **Insights** tab under the **Monitoring** section. Azure Kubernetes Service is looking at all of the logs and metrics in real time and giving you insights into the health of the cluster. There is nothing here in these charts that make you think that there's a problem here with CPU or memory.
+1. Click on the **Insights** tab under the **Monitoring** section. Azure Kubernetes Service is looking at all of the logs and metrics in real time and giving you insights into the health of the cluster. There is nothing here in these charts that make you think that there's a problem here with CPU or memory. Click on the **Containers** tab. So you keep drilling down to try to find this bug.
 
     ![](images/insights.gif)
 
-1. Click on the **Containers** tab. So you keep drilling down to try to find this bug. You can drill down deeper and see the individual containers and services that are running within your Kubernetes cluster. There are over 60 different containers that are powering your service together and here you get a real-time view of all those things. You can see that 60 containers running in Kubernetes.
+1. You can drill down deeper and see the individual containers and services that are running within your Kubernetes cluster. There are over 60 different containers that are powering your service together and here you get a real-time view of all those things. You can see that 60 containers running in Kubernetes.
 
     ![](images/containers.gif)
 
@@ -104,28 +104,8 @@ There are 2 features for the developers and operations team to consider as key t
 
     ![](images/enablevirtualnode.gif)
 
-1. To know more about the Virtual Node feature you have to run a load test which is going to push a massive load on the website. 
-    
-    Switch to Azure cloud console and run the load test by using below command:
-
-        kubectl create -f loadtest.yaml
-
-
-    Use below command to see the containers running :
-
-        watch -n 1 kubectl get po -l app-online-store -o wide
-
-    ![](images/loadtest.gif)
-
- 1. And you will see there are a few replicas already running in the cluster. But as that traffic increases, you start to need more resources so your website doesn't slow down. Azure automatically and very quickly is spinning up brand new containers, but do note that this is not spinning up within your cluster. These are ***Serverless Containers*** being created for you which are much lighter than a VM. These are ready in just a few seconds and this has continued to scale out and provision just the code that you need, so the customers get a rich and unlimited scale experience to complete their service.
-
-    ![](images/loadtestresult2.gif)
-
-    ![](images/loadtestresult3.gif)
-
-1. To verify, go to your Resource Group and filter based on Container instances. You can see that Kubernetes is creating all these serverless containers for you. And when the traffic slows down these are going to be de-provisioned. So you only pay for that burst traffic when you need it.
-
-    ![](images/virtualnodes.gif)
+1. Optionally, to know more about the Virtual Node feature you can run a load test (if you have one handy) which is going to push a massive load on the website. While load test is in progress you can go to your Resource Group and filter based on Container instances to see that Kubernetes would be creating serverless containers for you. And when the traffic slows down these are going to be de-provisioned. So you only pay for that burst traffic when you need it.
+   
 
 ## Summary
 

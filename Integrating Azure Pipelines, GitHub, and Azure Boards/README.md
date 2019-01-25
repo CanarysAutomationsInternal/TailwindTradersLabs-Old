@@ -65,11 +65,9 @@ You require the following to follow the demo.
 
     ![Azure Pipelines Access](images/pipelinesaccess.png)
 
-1. You will be directed to the **New pipeline** page of the chosen Azure DevOps project.
+1. You will be directed to the **New pipeline** page of the chosen Azure DevOps project. However, since Azure DevOps Demo Generator has already provisioned the project along with Azure Pipelines, let us use them.
 
     ![New Pipeline Page](images/newpipelinepage.png)
-
-1. The Azure DevOps Demo Generator which has provisioned the project for you has also created a build and a release pipeline. Let us use those pipelines to configure and queue the pipelines.
 
 1. Navigate to **Pipelines –> Builds**. Select **Website-CI** and click **Edit**.
 
