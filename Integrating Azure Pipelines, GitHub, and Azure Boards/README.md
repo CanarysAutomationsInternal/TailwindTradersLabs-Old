@@ -180,7 +180,7 @@ In addition, you can install an extension that integrates with **[ServiceNow](ht
    ![](images/website-view.png)
 
 
-## Walkthrough: Integrating GitHub with Azure Repos
+## Walkthrough: Integrating GitHub with Azure Boards
 
 Teams using Azure Pipelines to continuously build and deploy their code already have a deep integration between their code and their CI/CD pipelines. Adding Azure Boards to the mix deepens the integration, providing links from the build summary to the related code and work items for end-to-end traceability.
 
