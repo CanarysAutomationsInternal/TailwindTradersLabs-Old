@@ -190,12 +190,93 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![Backlogs on Board](images/backlogs.png)
 
-1. Click **New Work Item** and add a *user story* with the title **Users can login with their social media accounts**. Press Enter to create.
+1. Click the **Settings** gear icon and choose **Working with bugs**. For this scenario, choose **Bugs are managed with requirements.**
 
-    ![Create user story](images/newuserstory.png)
+    ![Bugs with requirements](images/boardsettings.png)
+
+1. Click **New Work Item** and add a *Bug* with the title **Fix the Shipping typo**. Press Enter to create.
+
+    ![Create user story](images/newbug.png)
 
 1. Click View as board.
 
     ![View board](images/viewboard.png)
 
-1. 
+1. Drag the bug to the *Active* column. This will set the status of the bug to *Active* state. Make note of the ID which will be used later for a commit and pull request.
+
+    ![Drag user story](images/dragwi.png)
+
+1. Now, let's connect this project to use GitHub repository. Choose **Project Settings --> GitHub connections --> Connect your GitHub Account**.
+
+    ![Connect GitHub](images/connectgithub.png)
+
+1. After the authorization is complete, the page returns to your Azure DevOps portal. In the Add GitHub repositories dialog, you'll see the list of repositories for which you are an administrator.
+
+    ![GitHub repos](images/githubreposportal.png)
+
+1. Check the ones that you want to add and then choose *Save*. When done, you should see the new connection with the selected repository listed.
+
+    ![Chosen Repos](images/chosenrepos.png)
+
+1. Return to the web app and notice the spelling of *Free Shipping**.
+
+    ![Web App](images/tailwindtraderapp.png)
+
+1. Let's go and fix the typo. Return to Visual Studio and clone the GitHub repository to your machine. Open the solution and create a new branch **FixTypos**. 
+
+    ![Create branch](images/createbranch.png)
+
+1. In the *Solution Explorer*, open the file **translation.json** under *Tailwind.Traders.Web\ClientApp\src\assets\locales\translation.json*. 
+
+    ![Open JSON](images/openfile.png)
+
+1. Search for **home.hero.shiping** and replace the word *Shiping* with **Shipping**. Save the file. 
+
+    ![Fix Typo](images/fixtypo.png)
+
+1. Click **Changes** in the *Team Explorer*, provide a commit message **Fixed Typos ##WorkItemID** and choose **Commit Staged and Push**. 
+
+    ![Commit File](images/commitchanges.png)
+
+    >  In this case we're inheriting the title from the commit, but having the pull request mention "Fixes ##ID" will link and complete the target work item when the pull request is merged.
+
+1. When the push has completed, return to the GitHub browser tab. With the commit pushed, we'll create a pull request to drive those changes back into the master branch.
+
+1. Click **Compare & pull request**, which should appear on its own. If not, refresh.
+
+    ![Compare & Pull request](images/compare-pr.png)
+
+1. Change the **base fork** to point at your project. By default it points at the original **Microsoft** repo, so be sure to change it.
+
+    ![base fork](images/basefork.png)
+
+1. The title should initialize to the commit message entered earlier. Click **Create pull request**.
+
+1. Return to Visual Studio. Under **Team Explorer**, click **Pull Requests**. Double-click the previously created Pull Request. You should see all details related to that pull request like the **status, Description, Reviewers(if any), Changes**.
+
+    ![PR Details](images/prdetails.png)
+
+1. Right-click the **translation.json** file and choose **View Changes** to view the file in a diff mode.
+
+    ![File Diff](images/filediff.png)
+    ![File Diff Mode](images/filediff1.png)
+
+1. Click the **View on GitHub** to open the pull request on the browser. Click **Merge pull request**. 
+
+    ![View on GitHub](images/viewongithub.png)
+
+1. On the browser, click **Merge pull request** to merge the changes to **master** branch.
+
+    ![Merge PR](images/mergepr.png)
+
+1. To confirm if the change shows up correctly, trigger the CI and then CD pipeline configured earlier. Once it completes, refresh the web app and confirm if you are able to see the changes.
+
+    ![App changes](images/webappchanged.png)
+
+1. Return to the Azure DevOps portal and open the Kanban board.Since the bug we were working on was linked in a pull request that was approved, Azure DevOps will automatically transition the state of the work item to **Closed**. You can also see that the related GitHub commits and pull request were linked to the work item.
+
+    ![Closed Bug](images/closedbug.png)
+
+1. The commit and pull request information should now be visible under the **Development** tab in the Bug work item.
+
+    ![Commit Info](images/commitinfo.png)
