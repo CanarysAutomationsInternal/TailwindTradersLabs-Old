@@ -233,7 +233,7 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![Commit File](images/commitchanges.png)
 
-    > In this case, we're inheriting the title from the commit, but having the pull request mention "Fixes ##ID" will link and complete the target work item when the pull request is merged.
+    > In this case, we're inheriting the title from the commit, but having the pull request mention "Fixes ##ID" will link and complete the target work item when the pull request is merged. The syntax used is **Fixes AB#[Work Item ID]** to create a link and update the state automatically when the changes reach the **master** branch. 
 
 1. When the push has completed, return to the GitHub browser tab. With the commit pushed, we'll create a pull request to drive those changes back into the master branch.
 
@@ -268,9 +268,9 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![App changes](images/webappchanged.png)
 
-1. Return to the Azure DevOps portal and open the Kanban board. Since the bug we were working on was linked in a pull request that was approved, Azure DevOps will automatically transition the state of the work item to **Closed**. You can also see that the related GitHub commits and pull request were linked to the work item.
+1. Return to the Azure DevOps portal and open the Kanban board. Since the bug we were working on was linked in a pull request that was approved, Azure DevOps will automatically transition the state of the work item to **Resolved**. You can also see that the related GitHub commits and pull request were linked to the work item.
 
-    ![Closed Bug](images/closedbug.png)
+    ![Closed Bug](images/resolvedbug.png)
 
 1. The commit and pull request information should now be visible under the **Development** tab in the Bug work item.
 
