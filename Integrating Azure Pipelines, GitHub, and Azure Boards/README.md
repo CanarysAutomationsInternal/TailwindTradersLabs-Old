@@ -69,13 +69,13 @@ You require the following to follow the demo.
 
     ![New Pipeline Page](images/newpipelinepage.png)
 
-1. The Azure DevOps Demo Generator which has provisioned the project for you, has also created a build and a release pipeline. Let us use those pipelines to configure and queue the pipelines.
+1. The Azure DevOps Demo Generator which has provisioned the project for you has also created a build and a release pipeline. Let us use those pipelines to configure and queue the pipelines.
 
 1. Navigate to **Pipelines –> Builds**. Select **Website-CI** and click **Edit**.
 
     ![](images/website-ci-edit.png)
 
-1. Your build pipeline will look like below. With this pipeline we are creating following Azure resources for the application deployment.
+1. Your build pipeline will look like below. With this pipeline, we are creating following Azure resources for the application deployment.
     
       - Azure Container Registry
       - Web App for Containers
@@ -93,7 +93,6 @@ You require the following to follow the demo.
     ![Choose Github repo](images/choosegithubrepo.png)
 
     ![Repository](images/repoellipsis.png)
-
 
 1. Select [Azure Resource Group Deployment](https://github.com/Microsoft/azure-pipelines-tasks/blob/master/Tasks/AzureResourceGroupDeploymentV2/README.md) task.
 This task is used to create or update a resource group in Azure using the [Azure Resource Manager templates](https://azure.microsoft.com/en-in/documentation/articles/resource-group-template-deploy/). To deploy to Azure, an Azure subscription has to be linked to Azure Pipelines. Select your **Azure subscription** from Azure subscription dropdown. Click **Authorize**. If your subscription is not listed or to specify an existing service principal, follow the [Service Principal creation](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=vsts) instructions.
@@ -124,7 +123,6 @@ This task is used to create or update a resource group in Azure using the [Azure
   
    ![](images/acr-repository.png)
 
-
 ## Configure Release(CD) pipeline
 
 By using a combination of manual deployment approvals, gates, and manual intervention within a release pipeline in Azure Pipelines, you can quickly and easily configure a release pipeline with all the control and auditing capabilities you require for your DevOps CI/CD processes. **Release Gates** allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. You can use gates to ensure that the release meets a wide range or criteria, without requiring user intervention.
@@ -146,7 +144,7 @@ In addition, you can install an extension that integrates with **[ServiceNow](ht
    
     ![](images/variables-release.png)
 
-   To get the details navigate to the Azure resource group provisioned earlier.
+   To get the details to navigate to the Azure resource group provisioned earlier.
    Make a note of App service name
 
     ![](images/appservice-name.png)
@@ -161,7 +159,7 @@ In addition, you can install an extension that integrates with **[ServiceNow](ht
  
     ![](images/azurecli-task.png)
 
-1. Select **Deploy Container to App Service** task. Make sure you have selected **Azure subscription** and choose **App service name** value from the drop down.
+1. Select **Deploy Container to App Service** task. Make sure you have selected **Azure subscription** and choose **App service name** value from the drop-down.
      
      ![](images/appservice-task.png)
 
@@ -178,7 +176,6 @@ In addition, you can install an extension that integrates with **[ServiceNow](ht
    ![](images/browse-appservice.png)
 
    ![](images/website-view.png)
-
 
 ## Walkthrough: Integrating GitHub with Azure Boards
 
@@ -198,7 +195,7 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![Create user story](images/newbug.png)
 
-1. Click View as board.
+1. Click **View as board**.
 
     ![View board](images/viewboard.png)
 
@@ -206,7 +203,7 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![Drag user story](images/dragwi.png)
 
-1. Now, let's connect this project to use GitHub repository. Choose **Project Settings --> GitHub connections --> Connect your GitHub Account**.
+1. Now, let's connect this project to use the GitHub repository. Choose **Project Settings --> GitHub connections --> Connect your GitHub Account**.
 
     ![Connect GitHub](images/connectgithub.png)
 
@@ -238,7 +235,7 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![Commit File](images/commitchanges.png)
 
-    >  In this case we're inheriting the title from the commit, but having the pull request mention "Fixes ##ID" will link and complete the target work item when the pull request is merged.
+    > In this case, we're inheriting the title from the commit, but having the pull request mention "Fixes ##ID" will link and complete the target work item when the pull request is merged.
 
 1. When the push has completed, return to the GitHub browser tab. With the commit pushed, we'll create a pull request to drive those changes back into the master branch.
 
@@ -265,7 +262,7 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![View on GitHub](images/viewongithub.png)
 
-1. On the browser, click **Merge pull request** to merge the changes to **master** branch.
+1. On the browser, click **Merge pull request** to merge the changes to the **master** branch.
 
     ![Merge PR](images/mergepr.png)
 
@@ -273,10 +270,11 @@ By connecting Azure Boards with GitHub repositories, you enable linking between 
 
     ![App changes](images/webappchanged.png)
 
-1. Return to the Azure DevOps portal and open the Kanban board.Since the bug we were working on was linked in a pull request that was approved, Azure DevOps will automatically transition the state of the work item to **Closed**. You can also see that the related GitHub commits and pull request were linked to the work item.
+1. Return to the Azure DevOps portal and open the Kanban board. Since the bug we were working on was linked in a pull request that was approved, Azure DevOps will automatically transition the state of the work item to **Closed**. You can also see that the related GitHub commits and pull request were linked to the work item.
 
     ![Closed Bug](images/closedbug.png)
 
 1. The commit and pull request information should now be visible under the **Development** tab in the Bug work item.
 
     ![Commit Info](images/commitinfo.png)
+
