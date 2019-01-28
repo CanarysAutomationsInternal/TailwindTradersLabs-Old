@@ -1,12 +1,14 @@
 # Integrating Azure Pipelines, GitHub, and Azure Boards
 
-## Key Takeaway
+## Key Takeaways
 
-The key takeaways from this demo are: 
+The key takeaways of the demo are:
 
-1. **DevOps** unifies people, process and technology, automates software releases for delivering continuous value to the users. 
+* **DevOps** unifies people, process and technology, automates software releases for delivering continuous value to the users. Microsoft provides the only comprehensive DevOps solution that spans from development to project management to deployment to operations.
 
-1. **Azure Pipelines** can automatically build and validate every pull request and commit to your GitHub repository.
+* **Azure DevOps** provides a fully integrated set of enterprise DevOps services covering the entire DevOps lifecycle.
+
+* **Azure Boards** provides a wealth of project management functionality . By connecting Azure Boards with GitHub repositories, teams can take advantage of the rich project management capabilities that spans Kanban boards, backlogs, team dashboards, and custom reporting
 
 ## Before you begin
 
@@ -20,30 +22,19 @@ You require the following to follow the demo.
 
 1. Provision the **Tailwind Traders** project to your Azure DevOps organization with the [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net/?name=tailwind%20traders) Follow the [simple walkthrough](https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-demo-generator-v2?view=azdevops&viewFallbackFrom=vsts") to create the project on your Azure DevOps organization.
 
+1. Fork the Tailwind Traders Website project at [https://github.com/Microsoft/TailwindTraders-Website](https://github.com/Microsoft/TailwindTraders-Website). 
+
 ## Walkthrough: Integrating GitHub with Azure Pipelines
 
-## Task 1: Forking a GitHub repository
+### Task 1: Installing Azure Pipelines and configuring CI pipeline
 
-1. Access the [Tailwind Traders Website repository on GitHub](https://github.com/Microsoft/TailwindTraders-Website). This is the baseline project that you will fork and use in this demo.
-
-1. Sign in to your GitHub account and click **Fork** to fork the repository to your own account. If prompted, select an account to fork the repository into.
-
-    ![Fork Repository](images/forkrepo.png)
-
-## Task 2: Installing Azure Pipelines and configuring CI pipeline
-
-1. The GitHub Marketplace provides a variety of tools from Microsoft and 3rd parties that help you extend your project workflows. Click Marketplace from the top navigation to visit it.
+1. Navigate to the **GitHub Market Place**. The GitHub Marketplace provides a variety of tools from Microsoft and 3rd parties that help you extend your project workflows. Click Marketplace from the top navigation to visit it.
 
     ![GitHub Marketplace](images/githubmarket.png)
 
-1. Search for **Azure Pipelines** and select the result.
+1. Search for **pipelines** and select **Azure Pipelines**.
 
     ![Search Azure Pipelines](images/azpipelineresult.png)
-
-1. Take a moment to read about the benefits of Azure Pipelines by clicking **Read more**.
-
-    ![Read More](images/readmorelink.png)
-    ![Details](images/details.png)
 
 1. The Azure Pipelines offers unlimited build minutes with 10 free parallel jobs for public repositories, and 1800 build minutes per month with 1 parallel job if you’re using a private repository. Click **Install it for free** under *Pricing and Setup* towards the bottom of the page.
 
