@@ -20,8 +20,6 @@ A developer benefits the following key takeaways from this exercise -
 
 1. <a href="https://dotnet.microsoft.com/download/dotnet-core/2.2">.NET Core 2.2 SDK</a>
 
-1. Tailwind Traders Website GitHub code from https://github.com/Microsoft/TailwindTraders-Website.git
-
 1. Tailwind Traders Rewards site GitHub code from 
 https://github.com/Microsoft/TailwindTraders-Rewards.git 
 
@@ -29,29 +27,13 @@ Let us explore the existing ASP.NET Web Form Tailwind Traders web application wi
 
 ## Walkthrough: Migrating a .NET app to Azure without code change
 
+When the local infrastructure is outgrowing on which the application is hosted, you need to look at the other options of meeting the demands without burdening the teams. The Azure cloud offers a host of platforms and service offerings to host the applications. To start with, you will use an **Azure App Services** to host the application without any changes to the existing code!
+
 1. By launching the new **Visual Studio 2019**, you will immediately notice its simplified “Open” experience.
 
     ![Launch VS](images/launchvs.png)
 
-1. Clone or check out the code of **Tailwind Traders** web application directly by clicking **Clone or Checkout code** on the right side of the window. Enter the repository URL – https://github.com/Microsoft/TailwindTraders-Website.git in the Code Repository Location and click **Clone**. Cloning the code brings it into the Visual Studio view.
-
-    ![Code Clone](images/codeclone.png)
-
-1. Under the **Solutions and Folders**, click **Tailwind.Traders.Web.sln** to open the solution.
-
-    ![Load Solution](images/solution-and-folders.png)
-
-1. Once the solution is loaded, press **F5** to start debugging the application. This is a web application built with **ASP.NET webforms**, **jQuery** and **SQL Server** database which is being used by their Customer Support team to track orders.  
-
-    ![Local Debugging](images/tailwindapp.png)
-
-1. When the application loads, search for a specific customer - *Micheal* using the **Search** icon. The search pulls up his contact information and the order history. 
-
-    ![Search Results](images/searchuser.png)
-
-    > Since the local infrastructure is outgrowing on which the application is hosted, let's look at the Azure cloud capabilities. The Azure cloud offers a host of platforms and service offerings. To start with, you will use the **Azure App Services** to host the application without any changes to the existing code!
-
-1. Head over to **Visual Studio** and stop debugging the application. Close the existing solution and click **Clone or check out code** option and enter the **Tailwind Traders Rewards** repository URL – https://github.com/Microsoft/TailwindTraders-Rewards.git in the Code Repository Location and click **Clone**. Under the **Solutions and Folders**, click **Tailwind.Traders.Rewards.sln** to open the solution.
+1. Click the **Clone or check out code** option and enter the **Tailwind Traders Rewards** repository URL – https://github.com/Microsoft/TailwindTraders-Rewards.git in the Code Repository Location and click **Clone**. Under the **Solutions and Folders**, click **Tailwind.Traders.Rewards.sln** to open the solution.
 
     ![Rewards Clone](images/clonerepo.png)
 
