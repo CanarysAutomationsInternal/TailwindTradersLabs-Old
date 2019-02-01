@@ -17,6 +17,8 @@
 
 1. Active Azure subscription
 
+1. Working on local machine is preferred in order to use camera through emulator. However, if you are working on a VM, the emulator will not be able to access your camera. Follow <a href="https://stackoverflow.com/questions/50698027/how-can-i-use-my-webcam-inside-an-azure-windows-server-virtual-machine" target="blank">these</a> steps to enable local camera access for your VM
+
 1. Install <a href="https://azurecliprod.blob.core.windows.net/msi/azure-cli-2.0.45.msi">Azure CLI version 2.0.45</a>
 
  ## Walkthrough: Configure AIVisualProvision App
@@ -165,7 +167,11 @@
 
    ![](images/Run_Emulator.png)
 
-2. Click **Allow** in order to access camera and photos.
+1. Optionally, if you are having trouble with emulator you can navigate to ***AIVisualProvision\Source\VisualProvision.Android\bin\Debug*** folder and install **com.microsoft.aiprovision-Signed.apk** on your Android mobile device and continue with below steps.
+
+   ![](images/CopySignedAPK.png)
+
+1. Click **Allow** in order to access camera and photos.
 
    ![](images/Run_AllowCameraAccess1.png)
 
@@ -208,6 +214,12 @@
 1. Switch to your **Azure portal** and navigate to the newly created resource group to see the Azure resources created through your emulator or mobile device.
 
    ![](images/Run_PostDeploymentRG.png)
+
+1. For some reason if you are unable to complete this lab, you can download the mobile apps from below links to try it out:
+
+   - <a href="https://install.appcenter.ms/orgs/appcenterdemos/apps/aivisualprovisionios/distribution_groups/public" target="blank">AI Visual Provision iOS App</a>
+
+   - <a href="https://install.appcenter.ms/orgs/appcenterdemos/apps/aivisualprovisionandroid/distribution_groups/public" target="blank">AI Visual Provision Android App</a>
 
 ## Summary
 
