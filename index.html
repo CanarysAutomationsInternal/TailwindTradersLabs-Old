@@ -57,44 +57,34 @@
 </script>
 <script>
      $(document).ready(function () {
-            $('#btnGithubDownload').click(function () {
-                appInsights.trackEvent("GitHub download clicked");
+            $('#btnGithubDownload').click(function () {                
                 ga('send', 'event', 'GitHub download', 'Clicked');
             });
             $('#btnGithubDemo').click(function () {
-                appInsights.trackEvent("GitHub demo clicked");
                 ga('send', 'event', 'GitHub demo', 'Clicked');
             });
             $('#btnAKSDownload').click(function () {
-                appInsights.trackEvent("AKS download clicked");
                 ga('send', 'event', 'AKS download', 'Clicked');
             });
             $('#btnAKSDemo').click(function () {
-                appInsights.trackEvent("AKS demo clicked");
                 ga('send', 'event', 'AKS demo', 'Clicked');
             });
             $('#btnDotNetDownload').click(function () {
-                appInsights.trackEvent("DotNet download clicked");
                 ga('send', 'event', 'DotNet download', 'Clicked');
             });
             $('#btnDotNetDemo').click(function () {
-                appInsights.trackEvent("DotNet demo clicked");
                 ga('send', 'event', 'DotNet demo', 'Clicked');
             });
             $('#btnVSDownload').click(function () {
-                appInsights.trackEvent("Visual Studio 2019 download clicked");
                 ga('send', 'event', 'Visual Studio 2019 download', 'Clicked');
             });
             $('#btnVSDemo').click(function () {
-                appInsights.trackEvent("Visual Studio 2019 demo clicked");
                 ga('send', 'event', 'Visual Studio 2019 demo', 'Clicked');
             });
             $('#btnAppCenterDownload').click(function () {
-                appInsights.trackEvent("App Center download clicked");
                 ga('send', 'event', 'App Center download', 'Clicked');
             });  
             $('#btnAppCenterDemo').click(function () {
-                appInsights.trackEvent("App Center demo clicked");
                 ga('send', 'event', 'App Center demo', 'Clicked');
             });    
         });
