@@ -398,17 +398,19 @@
                
 
         $(document).ready(function () {
-            $('.explore').click(function () {
-                ga('send', 'event', (this).data('text'), 'visited');
-            });
-            $('.try').click(function () {
-                ga('send', 'event', (this).data('text'), 'clicked');
-            });
+            // $('.explore').click(function () {
+            //     ga('send', 'event', (this).data('text'), 'visited');
+            // });
+            // $('.try').click(function () {
+            //     ga('send', 'event', (this).data('text'), 'clicked');
+            // });
 
-            $('#btnGithubDownload').click(function () {                
+            $('#btnGithubDownload').click(function () {  
+                Console.log("GitHub download");          
                 ga('send', 'event', 'GitHub download', 'Clicked');
             });
             $('#btnGithubDemo').click(function () {
+                Console.log("GitHub demo"); 
                 ga('send', 'event', 'GitHub demo', 'Clicked');
             });
             $('#btnAKSDownload').click(function () {
